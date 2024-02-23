@@ -83,7 +83,7 @@ def preview_all(model, noise_amount, return_only: bool = False):
 
 
 if __name__ == "__main__":
-    filename = "GAN_11-15-23_19.56"
+    filename = "GAN_11-15-23_21.24"
 
     configs = load_configs(f"./models/{filename}/settings.cfg")
     num_classes = 10
