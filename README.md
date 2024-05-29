@@ -21,3 +21,5 @@ Option 2: TorchTrainer.py, trains a deep neural network model
 
 First, rename the best epoch model to GenModel.pth, delete other models if you wish\
 Next set the filename variable in ViewResults.py to the model folder, and run
+
+![image](https://github.com/daven-c/DigitGAN/assets/52761945/2b3eb009-15ca-4940-a473-947a07c64a1a)
