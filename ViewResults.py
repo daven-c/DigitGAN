@@ -29,20 +29,8 @@ def multi_one_hot_label(labels):
 
 def load_configs(path: str = "settings.cfg"):
     with open(path, "r") as f:
-        lines = f.readlines()
-        settings = {}
-        for line in lines:
-            data = line.rstrip().split("=")
-            if len(data) == 2:
-                if data[1].count(".") > 0:  # Floats
-                    data[1] = float(data[1])
-                elif data[1].isdigit():  # Ints
-                    data[1] = int(data[1])
-                elif data[1] == "True":  # Bool
-                    data[1] = True
-                elif data[1] == "False":
-                    data[1] = False
-                settings.update({data[0]: data[1]})
+        settings = {data[0]: eval(data[1]) for line in f.readlines() if len(
+            data := line.rstrip().split("=")) == 2}
         return settings
 
 
@@ -86,6 +74,7 @@ if __name__ == "__main__":
     filename = "GAN_11-15-23_21.24"
 
     configs = load_configs(f"./models/{filename}/settings.cfg")
+    print(configs)
     num_classes = 10
     noise_amount = configs["noise_amount"]
     epochs = configs["epochs"]
